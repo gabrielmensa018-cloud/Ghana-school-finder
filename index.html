@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover senior high schools and universities across Ghana.">
+  <title>Ghana School Finder | Find Your Future</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="schools.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">GS</span><span>Ghana <b>School Finder</b></span></a>
+  <nav><a class="active" href="index.html">Home</a><a href="#schools">Find Schools</a><a href="#universities">Universities</a><a href="#education">Education Hub</a><a href="about.html">About Us</a></nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+      <h1>Find the school<br><em>that fits your future.</em></h1>
+      <p>Explore senior high schools and universities across Ghana. Compare locations, learn about schools and make informed choices.</p>
+      <div class="search-wrap">
+        <label class="sr-only" for="schoolSearch">Search for a school</label>
+        <span class="search-icon">⌕</span>
+        <input id="schoolSearch" type="search" autocomplete="off" placeholder="Search a school or university...">
+        <button id="searchButton">Search</button>
+        <div id="suggestions" class="suggestions" role="listbox" aria-label="Matching schools"></div>
+      </div>
+      <small class="search-hint">Try a name such as “Achimota” or “University of Ghana”.</small>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="art-circle"></div><div class="book book-one">LEARN</div><div class="book book-two">GROW</div><div class="cap">✦</div><div class="art-caption">Explore. Choose. Succeed.</div></div>
+  </section>
+
+  <section class="stats">
+    <div><strong>16</strong><span>Regions to explore</span></div>
+    <div><strong>SHS</strong><span>Senior high schools</span></div>
+    <div><strong>UNI</strong><span>Universities</span></div>
+    <div><strong>1 place</strong><span>For your school search</span></div>
+  </section>
+
+  <section class="section" id="schools">
+    <div class="section-heading"><div><span class="eyebrow">DISCOVER YOUR OPTIONS</span><h2>Find a school</h2><p>Search by school name or narrow the list by type and region.</p></div><span class="result-count" id="resultCount"></span></div>
+    <div class="filters">
+      <select id="typeFilter" aria-label="School type"><option value="all">All school types</option><option value="SHS">Senior High Schools</option><option value="University">Universities</option><option value="Technical University">Technical Universities</option></select>
+      <select id="regionFilter" aria-label="Region"><option value="all">All 16 regions</option></select>
+      <button class="reset-btn" id="resetFilters">Reset filters</button>
+    </div>
+    <div id="schoolGrid" class="school-grid"></div>
+    <p class="catalogue-note">This starter edition contains sample entries to demonstrate the website. It is not yet a complete or officially verified national register. More verified school records and official logos can be added to the catalogue.</p>
+  </section>
+
+  <section class="section university-band" id="universities">
+    <div><span class="eyebrow">PLAN BEYOND SHS</span><h2>Explore universities too</h2><p>Discover tertiary institutions and learn where different paths can take you.</p></div>
+    <a class="light-button" href="#schools" id="universityJump">Browse universities →</a>
+  </section>
+
+  <section class="section education-section" id="education">
+    <div class="section-heading"><div><span class="eyebrow">LEARN WHAT'S NEXT</span><h2>Education Hub</h2><p>Useful updates and opportunities for students and families.</p></div></div>
+    <div class="education-grid">
+      <article class="feature-card"><span class="feature-icon">✦</span><span class="tag">STUDENT GUIDE</span><h3>Choosing your SHS</h3><p>Consider programmes, location, school environment and your future interests before making choices.</p><a href="about.html#student-guide">Read student guide →</a></article>
+      <article class="feature-card"><span class="feature-icon">▣</span><span class="tag">ADMISSIONS</span><h3>Admission announcements</h3><p>Look out for official admission notices and application deadlines from recognised institutions.</p><a href="https://www.ges.gov.gh/" target="_blank" rel="noopener">Visit Ghana Education Service →</a></article>
+      <article class="feature-card advert-card"><span class="tag">ADVERTISEMENT SPACE</span><h3>Promote an education service</h3><p>This space can feature school open days, approved education events, learning resources and scholarship notices.</p><a href="about.html#advertise">Learn about advertising →</a></article>
+    </div>
+    <p class="notice">Always confirm placement, admission, scholarship and examination information with the responsible official institution.</p>
+  </section>
+</main>
+<footer><a class="brand footer-brand" href="index.html"><span class="brand-mark">GS</span><span>Ghana <b>School Finder</b></span></a><span>Helping students make informed choices.</span><a href="about.html">About us</a></footer>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <section class="school-modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div id="modalContent"></div>
+  </section>
+</div>
+</body>
+</html>
